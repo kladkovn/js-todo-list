@@ -1,7 +1,91 @@
 @use '../../style' as s;
 
 main {
-	background: s.color(dark);
-	color: s.color(light);
+	background: s.color(light);
+	color: s.color(black);
 	padding: s.space(4);
+	display: flex;
+	justify-content: center;
 } 
+.page{
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0px 4px 17px 0px rgba( 0, 0, 0, 0.1);
+	
+	
+	padding: s.space(15)s.space(5);
+	gap: s.space(6);
+	border: 1px solid s.color(border);
+	border-radius: 12px;
+	&>h1{
+		font-size: 24px;
+	}
+}
+.form{
+	display: grid;
+	grid-template-columns: 5fr 1fr;
+	gap: s.space(3);
+	&>.form__input{
+		border: 1px solid s.color(border);
+		border-radius: 4px;
+		padding: s.space(2) s.space(4);
+	}
+	&>.form__button{
+		background-color: s.color(main);
+		color:aliceblue;
+		border-radius: 4px;
+		padding: 4px 8px;
+		transition: opacity 0.7s;
+		&:hover{
+			opacity: 0.5;
+		}
+	}
+}
+.task{
+	&__list{
+		display: flex;
+		flex-direction: column;
+		gap: s.space(3);
+	}
+	&{
+		display: grid;
+		grid-template-columns: auto 1fr auto auto;
+		align-items: center;
+		gap: s.space(3);
+		padding: 8px 0;
+		border-bottom:1px solid s.color(border);
+		&__number{
+			color: #121212;
+			font-size: 16px;
+		}
+		&__text{
+			font-size: 16px;
+			color: #122529;
+			transition: opacity 0.7s;
+		}
+		&--done &__text{
+			opacity: 0.5;
+			text-decoration: line-through;
+		}
+		&__button{
+			transition: opacity 0.7s;
+			&:hover{
+				opacity: 0.5;
+			}
+			height: 28px;
+			width: 28px;
+			background-size: cover;
+
+			&--do{
+				background-image: url('/svg/do.svg');
+			}
+			&--done{
+				background-image: url('/svg/done.svg');
+			}
+			&--cancel{
+				background-image: url('/svg/cancel.svg');
+			}
+		}
+	}
+}

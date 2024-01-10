@@ -4,7 +4,43 @@
 }}
 
 <main>
-	{{>heading title="Index" info=data.test}}
+	<div class="page">
+        <h1>To Do List</h1>
+        <div class="form">
+            <input class="form__input"type="text" placeholder="Введіть задачу">
+            <button class="form__button">Додати</button>
+        </div>
+           
+        <div class="task__list">
+                <div class="task task--done">
+                    <span class="task__number">1.</span>
+                    <span class="task__text">Lorem ipsum dolor sit amet consectetur.</span>
+                    <button class="task__button task__button--do">
+                       
+                    </button>
+                    <button class="task__button task__button--cancel">
+                       
+                    </button>
+                    <button class="task__button task__button--done">
+                        
+                    </button>
+                </div>
+        </div>
+        
+    </div>
+    <template id="task">
+        <div class="task">
+            <span class="task__number"></span>
+            <span class="task__text"></span>
+            <button class="task__button task__button--do task__button--done">
+               
+            </button>
+            
+            <button class="task__button task__button--cancel">
+                
+            </button>
+        </div>
+    </template>
 </main>
 
 {{!
